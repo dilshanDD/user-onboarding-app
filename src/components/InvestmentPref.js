@@ -9,6 +9,9 @@ import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -33,6 +36,18 @@ class InvestmentPref extends React.Component {
   render() {
     const { values, handleChange } = this.props;
 
+    const steps = [
+      {
+        label: "Contact Details",
+      },
+      {
+        label: "Investment plans",
+      },
+      {
+        label: "Investment preferences",
+      },
+    ];
+
     return (
       <React.Fragment>
         <Box sx={{ flexGrow: 1 }}>
@@ -48,9 +63,29 @@ class InvestmentPref extends React.Component {
               <Typography variant="h5" align="left" style={{ color: "white" }}>
                 Blue area
               </Typography>
-              <div>
-                <Stepper />
-              </div>
+              <Box
+                component="form"
+                mt={1}
+                sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
+                pt={20}
+              >
+                <Box sx={{ maxWidth: 400 }}>
+                  <Stepper activeStep={values.step} orientation="vertical">
+                    {steps.map((step, index) => (
+                      <Step key={step.label}>
+                        <StepLabel>{step.label}</StepLabel>
+                        <StepContent>
+                          <Typography>{step.description}</Typography>
+                          <Box sx={{ mb: 2 }}>
+                            <div></div>
+                          </Box>
+                        </StepContent>
+                      </Step>
+                    ))}
+                  </Stepper>
+                </Box>
+              </Box>
             </Grid>
             <Grid
               item
@@ -151,7 +186,7 @@ class InvestmentPref extends React.Component {
                     sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
                   >
                     <Checkbox {...label} />
-                    <Typography pl={1} pt={3}  style={{ color: "black" }}>
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
                       Commercial retail
                     </Typography>
                   </Box>
@@ -237,26 +272,25 @@ class InvestmentPref extends React.Component {
               >
                 <Button
                   variant="text"
-                  style={{ textTransform: "none", color: "#35a0ee"  }}
+                  style={{ textTransform: "none", color: "#35a0ee" }}
                   onClick={this.back}
                   endIcon={<ArrowRightAltIcon />}
-                  
                 >
                   Back to the home
                 </Button>
 
                 <Button
                   size="medium"
-                  style={{ textTransform: "none", color: "#35a0ee"}}
+                  style={{ textTransform: "none", color: "#35a0ee" }}
                 >
                   Skip for now
                 </Button>
                 <Button
                   style={{ backgroundColor: "#35a0ee" }}
                   variant="contained"
-                  onClick={this.continue}
+                 
                 >
-                  Continue
+                  Finish
                 </Button>
               </Box>
             </Grid>

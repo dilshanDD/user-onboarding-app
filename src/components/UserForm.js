@@ -25,7 +25,6 @@ class UserForm extends React.Component {
   };
 
 
-
   //Go back to prev
   prevStep = () => {
     const { step } = this.state;
@@ -45,7 +44,7 @@ class UserForm extends React.Component {
     const { fullname, phone, email, country, salary_from, salary_to } =
       this.state;
 
-    const values = { fullname, phone, email, country, salary_from, salary_to };
+    const values = { step,fullname, phone, email, country, salary_from, salary_to };
 
     switch (step) {
       case 1:

@@ -7,18 +7,31 @@ import Typography from "@mui/material/Typography";
 import Stepper from "@mui/material/Stepper";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import ArrowLeftAltIcon from "@mui/icons-material/ArrowRightAlt";
+import Paper from "@mui/material/Paper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
 
 class ContactDetails extends React.Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
-    
   };
-
-  
 
   render() {
     const { values, handleChange } = this.props;
+
+    const steps = [
+      {
+        label: "Contact Details",
+      },
+      {
+        label: "Investment plans",
+      },
+      {
+        label: "Investment preferences",
+      },
+    ];
 
     return (
       <React.Fragment>
@@ -35,9 +48,30 @@ class ContactDetails extends React.Component {
               <Typography variant="h5" align="left" style={{ color: "white" }}>
                 Blue area
               </Typography>
-              <div>
-                <Stepper />
-              </div>
+
+              <Box
+                component="form"
+                mt={1}
+                sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
+                pt={20}
+              >
+                <Box sx={{ maxWidth: 400 }}>
+                  <Stepper activeStep={values.step} orientation="vertical">
+                    {steps.map((step, index) => (
+                      <Step key={step.label}>
+                        <StepLabel>{step.label}</StepLabel>
+                        <StepContent>
+                          <Typography>{step.description}</Typography>
+                          <Box sx={{ mb: 2 }}>
+                            <div></div>
+                          </Box>
+                        </StepContent>
+                      </Step>
+                    ))}
+                  </Stepper>
+                </Box>
+              </Box>
             </Grid>
             <Grid
               item
@@ -80,13 +114,13 @@ class ContactDetails extends React.Component {
                   pt={5}
                   pl={10}
                 >
-                  Contact Details 
+                  Contact Details
                 </Typography>
                 <Typography style={{ color: "gray" }} pl={10}>
                   <p>
                     Welcome to united United Properties. we are glad to see you!
                     Let's get
-                    <div>started by letting us know a little bit about you</div>  
+                    <div>started by letting us know a little bit about you</div>
                   </p>
                 </Typography>
               </div>

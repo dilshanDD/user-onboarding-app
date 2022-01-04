@@ -10,6 +10,9 @@ import Slider from "@mui/material/Slider";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
 
 const marks = [
   {
@@ -60,6 +63,18 @@ class InvestmentPlans extends React.Component {
   render() {
     const { values, handleChange } = this.props;
 
+    const steps = [
+      {
+        label: "Contact Details",
+      },
+      {
+        label: "Investment plans",
+      },
+      {
+        label: "Investment preferences",
+      },
+    ];
+
     return (
       <React.Fragment>
         <Box sx={{ flexGrow: 1 }}>
@@ -75,9 +90,31 @@ class InvestmentPlans extends React.Component {
               <Typography variant="h5" align="left" style={{ color: "white" }}>
                 Blue area
               </Typography>
-              <div>
-                <Stepper />
-              </div>
+              
+              <Box
+                component="form"
+                mt={1}
+                sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
+                pt={20}
+              >
+                <Box sx={{ maxWidth: 400 }}>
+                  <Stepper activeStep={values.step} orientation="vertical">
+                    {steps.map((step, index) => (
+                      <Step key={step.label}>
+                        <StepLabel>{step.label}</StepLabel>
+                        <StepContent>
+                          <Typography>{step.description}</Typography>
+                          <Box sx={{ mb: 2 }}>
+                            <div></div>
+                          </Box>
+                        </StepContent>
+                      </Step>
+                    ))}
+                  </Stepper>
+                </Box>
+              </Box>
+
             </Grid>
             <Grid
               item
