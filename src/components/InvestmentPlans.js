@@ -177,7 +177,7 @@ class InvestmentPlans extends React.Component {
                   align="left"
                   pt={1}
                 >
-                  Are you an credited investor?
+                  Are you an accredited investor?
                 </Typography>
 
                 <RadioGroup

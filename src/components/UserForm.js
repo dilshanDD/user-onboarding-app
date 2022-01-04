@@ -1,6 +1,7 @@
 import React from "react";
 import ContactDetails from "./ContactDetails";
 import InvestmentPlans from "./InvestmentPlans";
+import InvestmentPref from "./InvestmentPref";
 
 class UserForm extends React.Component {
   state = {
@@ -63,7 +64,14 @@ class UserForm extends React.Component {
           /> //when add attributes to a components those are props
         );
       case 3:
-        return <h1>Investment preferences</h1>;
+        return (
+          <InvestmentPref
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          /> //when add attributes to a components those are props
+        );
     }
   }
 }
