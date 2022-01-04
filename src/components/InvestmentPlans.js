@@ -46,12 +46,23 @@ class InvestmentPlans extends React.Component {
     return (
       <React.Fragment>
         <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
+          <Grid container spacing={0}>
             <Grid item xs={4}>
-            <Item sx={{ bgcolor: '#35a0ee', color: 'primary.contrastText', p: 2 }}>Blue Area</Item>
+              <Item
+                sx={{
+                  bgcolor: "#35a0ee",
+                  color: "primary.contrastText",
+                  p: 33,
+                }}
+              >
+                ////////// Blue Area
+              </Item>
             </Grid>
+
             <Grid item xs={8}>
-              <Item>
+              <Item
+                sx={{ bgcolor: "white", color: "primary.contrastText", p: 20 }}
+              >
                 <TextField
                   label="From"
                   defaultValue={values.salary_from}
