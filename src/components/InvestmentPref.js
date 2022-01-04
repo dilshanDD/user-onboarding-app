@@ -1,17 +1,29 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Stepper from "@mui/material/Stepper";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import Slider from "@mui/material/Slider";
+import Checkbox from "@mui/material/Checkbox";
+
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-import FormControlLabel from "@mui/material/FormControlLabel";
+
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 class InvestmentPref extends React.Component {
   continue = (e) => {
@@ -51,7 +63,7 @@ class InvestmentPref extends React.Component {
               xs={8}
               sm={8}
               md={8}
-              lg={8}
+              // lg={8}
               style={{ backgroundColor: "white" }}
             >
               <Box
@@ -78,16 +90,16 @@ class InvestmentPref extends React.Component {
                   </Typography>
                 </div>
               </Box>
-
               <Typography
                 sx={{ fontWeight: "bold" }}
                 variant="h5"
                 align="left"
                 pt={5}
+                pl={10}
               >
                 Investment Preferences
               </Typography>
-              <Typography style={{ color: "gray" }}>
+              <Typography style={{ color: "gray" }} pl={10}>
                 <p>
                   This will help us figue out what your investment options are
                   so
@@ -97,41 +109,151 @@ class InvestmentPref extends React.Component {
                   </div>
                 </p>
               </Typography>
+              {/* Box Set 
+              
+              
+              */}
+              <div>
+                <Box
+                  component="form"
+                  mt={1}
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "12ch", height: "15ch" },
+                    display: "flex",
+                    flexWrap: "wrap",
+                  }}
+                  noValidate
+                  autoComplete="off"
+                  pl={10}
+                >
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={2} pt={3} style={{ color: "black" }}>
+                      Single family
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
+                      Residential multifamily
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3}  style={{ color: "black" }}>
+                      Commercial retail
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
+                      Commercial industrial
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  component="form"
+                  mt={1}
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "12ch", height: "15ch" },
+                    display: "flex",
+                    flexWrap: "wrap",
+                  }}
+                  noValidate
+                  autoComplete="off"
+                  pl={10}
+                >
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
+                      Commercial hospitality
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
+                      Commercial webhousing
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={1} pt={3} style={{ color: "black" }}>
+                      Commercial office
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    mt={2}
+                    ml={10}
+                    mr={10}
+                    sx={{ border: 2, borderColor: "#35A0EE", borderRadius: 2 }}
+                  >
+                    <Checkbox {...label} />
+                    <Typography pl={2} pt={3} style={{ color: "black" }}>
+                      Other
+                    </Typography>
+                  </Box>
+                </Box>
+              </div>
               <Box
                 component="form"
                 mt={1}
                 sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
               >
-                <Typography
-                  sx={{ fontWeight: "Bold" }}
-                  variant="h6"
-                  align="left"
-                  pt={1}
-                >
-                  What kind of real estate are you interested in?
-                </Typography>
-
-                <div>
-
-                    //grid
-                </div>
-
-               
-
-                <br />
-
                 <Button
                   variant="text"
-                  style={{ textTransform: "none", color: "#35a0ee" }}
+                  style={{ textTransform: "none", color: "#35a0ee"  }}
                   onClick={this.back}
                   endIcon={<ArrowRightAltIcon />}
+                  
                 >
                   Back to the home
                 </Button>
 
                 <Button
                   size="medium"
-                  style={{ textTransform: "none", color: "#35a0ee" }}
+                  style={{ textTransform: "none", color: "#35a0ee"}}
                 >
                   Skip for now
                 </Button>

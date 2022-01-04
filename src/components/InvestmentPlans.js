@@ -119,10 +119,11 @@ class InvestmentPlans extends React.Component {
                 variant="h5"
                 align="left"
                 pt={5}
+                pl={10}
               >
                 Investment Plans
               </Typography>
-              <Typography style={{ color: "gray" }}>
+              <Typography style={{ color: "gray" }} pl={10}>
                 <p>
                   Let us know about your investment plans. This will help us to
                   get{" "}
@@ -133,6 +134,7 @@ class InvestmentPlans extends React.Component {
                 component="form"
                 mt={1}
                 sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
               >
                 <Typography
                   sx={{ fontWeight: "Bold" }}
@@ -177,7 +179,9 @@ class InvestmentPlans extends React.Component {
                   align="left"
                   pt={1}
                 >
-                  Are you an accredited investor?
+                  <p style={{ width: "60ch" }}>
+                    Are you an accredited investor?
+                  </p>
                 </Typography>
 
                 <RadioGroup

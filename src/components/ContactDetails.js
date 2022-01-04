@@ -77,10 +77,11 @@ class ContactDetails extends React.Component {
                   variant="h5"
                   align="left"
                   pt={5}
+                  pl={10}
                 >
                   Contact Details
                 </Typography>
-                <Typography style={{ color: "gray" }}>
+                <Typography style={{ color: "gray" }} pl={10}>
                   <p>
                     Welcome to united United Properties. we are glad to see you!
                     Let's get
@@ -93,6 +94,7 @@ class ContactDetails extends React.Component {
                 component="form"
                 mt={1}
                 sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
+                pl={10}
               >
                 <TextField
                   id="f-name"
@@ -141,7 +143,7 @@ class ContactDetails extends React.Component {
                   >
                     Privacy policy
                   </Typography>
-                  <p style={{ width: "60ch", color: "gray" }}>
+                  <p style={{ width: "70ch", color: "gray" }}>
                     We know you care about how your personal information is used
                     and
                     <div>shared, so we take your privacy seriously</div>
