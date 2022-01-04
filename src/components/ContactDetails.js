@@ -46,7 +46,7 @@ class ContactDetails extends React.Component {
               style={{ backgroundColor: "#35a0ee" }}
             >
               <Typography variant="h5" align="left" style={{ color: "white" }}>
-                Blue area
+                {/* Blue area */}
               </Typography>
 
               <Box sx={{ maxWidth: 400 }} pl={10} pt={20}>
