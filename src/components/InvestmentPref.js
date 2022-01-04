@@ -63,28 +63,44 @@ class InvestmentPref extends React.Component {
               <Typography variant="h5" align="left" style={{ color: "white" }}>
                 Blue area
               </Typography>
+              <Box sx={{ maxWidth: 400 }} pl={10} pt={20}>
+                <Stepper activeStep={values.step} orientation="vertical">
+                  {steps.map((step, index) => (
+                    <Step key={step.label}>
+                      <StepLabel>{step.label}</StepLabel>
+                      <StepContent>
+                        <Typography>{step.description}</Typography>
+                        <Box sx={{ mb: 2 }}>
+                          <div></div>
+                        </Box>
+                      </StepContent>
+                    </Step>
+                  ))}
+                </Stepper>
+              </Box>
+
               <Box
-                component="form"
-                mt={1}
-                sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
-                pl={10}
-                pt={20}
+                sx={{
+                  width: 300,
+                  height: 200,
+                  backgroundColor: "white",
+                }}
+                mt={10}
+                ml={10}
               >
-                <Box sx={{ maxWidth: 400 }}>
-                  <Stepper activeStep={values.step} orientation="vertical">
-                    {steps.map((step, index) => (
-                      <Step key={step.label}>
-                        <StepLabel>{step.label}</StepLabel>
-                        <StepContent>
-                          <Typography>{step.description}</Typography>
-                          <Box sx={{ mb: 2 }}>
-                            <div></div>
-                          </Box>
-                        </StepContent>
-                      </Step>
-                    ))}
-                  </Stepper>
-                </Box>
+                <Typography
+                  style={{ color: "gray", fontStyle: "italic" }}
+                  pt={5}
+                  pl={2}
+                >
+                  <p>
+                    United Properties is about fast and easy searching,
+                    buying,selling and investing ever - online, with an expert
+                    by our side.
+                  </p>
+                  <p>Ollie Mcmahon</p>
+                </Typography>
+                <br />
               </Box>
             </Grid>
             <Grid
@@ -288,7 +304,6 @@ class InvestmentPref extends React.Component {
                 <Button
                   style={{ backgroundColor: "#35a0ee" }}
                   variant="contained"
-                 
                 >
                   Finish
                 </Button>
