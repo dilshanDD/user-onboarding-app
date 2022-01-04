@@ -7,6 +7,8 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Stepper from "@mui/material/Stepper";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import ArrowLeftAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 class ContactDetails extends React.Component {
   continue = (e) => {
@@ -44,10 +46,35 @@ class ContactDetails extends React.Component {
               lg={8}
               style={{ backgroundColor: "white" }}
             >
+              <Box
+                mt={2}
+                ml={10}
+                mr={10}
+                sx={{ height: 50 }}
+                style={{ backgroundColor: "white" }}
+              >
+                <div style={{ display: "flex" }}>
+                  <Typography align="left" style={{ color: "grey" }}>
+                    step 1 from 3
+                  </Typography>
+                  <Typography pl={30} style={{ color: "gray" }}>
+                    Lost or have trouble?
+                    <Button
+                      sx={{ width: 110 }}
+                      variant="text"
+                      style={{ textTransform: "none", color: "#35a0ee" }}
+                      endIcon={<ArrowRightAltIcon />}
+                    >
+                      Get help
+                    </Button>
+                  </Typography>
+                </div>
+              </Box>
+
               <div>
                 <Typography
                   sx={{ fontWeight: "bold" }}
-                  variant="h4"
+                  variant="h5"
                   align="left"
                   pt={5}
                 >
@@ -122,7 +149,7 @@ class ContactDetails extends React.Component {
                   <Button
                     variant="text"
                     style={{ textTransform: "none", color: "#35a0ee" }}
-                    // endIcon={<ArrowRightAltIcon />}
+                    endIcon={<ArrowRightAltIcon />}
                   >
                     Expand privacy policy
                   </Button>
@@ -132,7 +159,7 @@ class ContactDetails extends React.Component {
                 <Button
                   variant="text"
                   style={{ textTransform: "none", color: "#35a0ee" }}
-                  // endIcon={<ArrowRightAltIcon />}
+                  endIcon={<ArrowLeftAltIcon />}
                 >
                   Back to the home
                 </Button>
