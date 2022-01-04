@@ -1,8 +1,6 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -14,7 +12,10 @@ class ContactDetails extends React.Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
+    
   };
+
+  
 
   render() {
     const { values, handleChange } = this.props;
@@ -79,13 +80,13 @@ class ContactDetails extends React.Component {
                   pt={5}
                   pl={10}
                 >
-                  Contact Details
+                  Contact Details 
                 </Typography>
                 <Typography style={{ color: "gray" }} pl={10}>
                   <p>
                     Welcome to united United Properties. we are glad to see you!
                     Let's get
-                    <div>started by letting us know a little bit about you</div>
+                    <div>started by letting us know a little bit about you</div>  
                   </p>
                 </Typography>
               </div>

@@ -24,6 +24,8 @@ class UserForm extends React.Component {
     });
   };
 
+
+
   //Go back to prev
   prevStep = () => {
     const { step } = this.state;

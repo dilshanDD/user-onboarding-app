@@ -9,8 +9,6 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Slider from "@mui/material/Slider";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 const marks = [
