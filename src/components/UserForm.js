@@ -1,6 +1,9 @@
 import React from "react";
-import reactDom from "react-dom";
 import ContactDetails from "./ContactDetails";
+
+
+
+
 
 class UserForm extends React.Component {
   state = {
@@ -46,6 +49,7 @@ class UserForm extends React.Component {
           <ContactDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
+            values ={values}
           /> //when add attributes to a components those are props
         );
       case 2:
