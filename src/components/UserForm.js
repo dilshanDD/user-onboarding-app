@@ -1,9 +1,6 @@
 import React from "react";
 import ContactDetails from "./ContactDetails";
-
-
-
-
+import InvestmentPlans from "./InvestmentPlans";
 
 class UserForm extends React.Component {
   state = {
@@ -12,6 +9,9 @@ class UserForm extends React.Component {
     phone: "",
     email: "",
     country: "",
+    salary_from: "",
+    salary_to: "",
+    accredited: "",
   };
 
   //procees to next step
@@ -39,9 +39,10 @@ class UserForm extends React.Component {
 
   render() {
     const { step } = this.state;
-    const { fullname, phone, email, country } = this.state;
+    const { fullname, phone, email, country, salary_from, salary_to } =
+      this.state;
 
-    const values = { fullname, phone, email, country };
+    const values = { fullname, phone, email, country, salary_from, salary_to };
 
     switch (step) {
       case 1:
@@ -49,11 +50,18 @@ class UserForm extends React.Component {
           <ContactDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            values ={values}
+            values={values}
           /> //when add attributes to a components those are props
         );
       case 2:
-        return <h1>Investment Plan</h1>;
+        return (
+          <InvestmentPlans
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          /> //when add attributes to a components those are props
+        );
       case 3:
         return <h1>Investment preferences</h1>;
     }
