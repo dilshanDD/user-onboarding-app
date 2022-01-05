@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
+import MenuItem from "@mui/material/MenuItem";
 
 class ContactDetails extends React.Component {
   continue = (e) => {
@@ -19,6 +20,21 @@ class ContactDetails extends React.Component {
   };
 
   render() {
+    const countries = [
+      {
+        value: "srilanka",
+        label: "srilanka",
+      },
+      {
+        value: "India",
+        label: "India",
+      },
+      {
+        value: "Australia",
+        label: "Australia",
+      },
+    ];
+
     const { values, handleChange } = this.props;
 
     const steps = [
@@ -74,17 +90,19 @@ class ContactDetails extends React.Component {
                 mt={10}
                 ml={10}
               >
-                <Typography style={{ color: "gray", fontStyle: 'italic'}} pt={5} pl={2} >
+                <Typography
+                  style={{ color: "gray", fontStyle: "italic" }}
+                  pt={5}
+                  pl={2}
+                >
                   <p>
-                    "We are about your time, that's why we created a 3-stage onboarding that will
-                    not take more than 5 minues to complete"
+                    "We are about your time, that's why we created a 3-stage
+                    onboarding that will not take more than 5 minues to
+                    complete"
                   </p>
-                  <p>
-                    William Mac 
-                  </p>
+                  <p>William Mac</p>
                 </Typography>
-                <br/>
-               
+                <br />
               </Box>
             </Grid>
             <Grid
@@ -150,6 +168,7 @@ class ContactDetails extends React.Component {
                   label="Full name"
                   variant="standard"
                   defaultValue={values.fullname}
+                  required={true}
                   onChange={handleChange("fullname")}
                 />
                 <TextField
@@ -157,8 +176,10 @@ class ContactDetails extends React.Component {
                   label="Contact Number"
                   variant="standard"
                   defaultValue={values.phone}
+                  required={true}
                   onChange={handleChange("phone")}
                 />
+
                 <div>
                   <TextField
                     fullWidth
@@ -167,21 +188,26 @@ class ContactDetails extends React.Component {
                     variant="standard"
                     style={{ width: "53ch" }}
                     defaultValue={values.email}
+                    required={true}
                     onChange={handleChange("email")}
                   />
                 </div>
                 <div>
                   <TextField
-                    fullWidth
-                    id="select-country"
+                    id="outlined-select-currency"
                     select
-                    label="Country"
-                    SelectProps={{ native: true }}
+                    label="Select Country"
                     variant="standard"
-                    style={{ width: "53ch" }}
-                    defaultValue={values.email}
-                    onChange={handleChange("email")}
-                  ></TextField>
+                    defaultValue={values.cuntries}
+                    onChange={handleChange("country")}
+                    helperText="Please select your currency"
+                  >
+                    {countries.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </div>
 
                 <div>
